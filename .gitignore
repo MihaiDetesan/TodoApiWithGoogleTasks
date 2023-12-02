@@ -298,3 +298,6 @@ __pycache__/
 *.db-shm
 *.db-wal
 /.tye
+/secrets/client_secret_875605081999-qin880u2b6fplj16e9vs52tfhk9rnb99.apps.googleusercontent.com.json
+/TodoApi/client_secret.json
+/TodoApi/credentials.json
