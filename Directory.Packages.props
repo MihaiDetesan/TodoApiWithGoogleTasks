@@ -3,6 +3,7 @@
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
   <ItemGroup>
+    <PackageVersion Include="Google.Apis.Tasks.v1" Version="1.64.0.3015" />
     <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="7.0.0" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.0" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.4.0" />
@@ -10,7 +11,6 @@
     <PackageVersion Include="xunit.runner.visualstudio" Version="2.4.5" />
     <PackageVersion Include="coverlet.collector" Version="3.2.0" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageVersion Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.5" />
     <PackageVersion Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.5" />
@@ -32,7 +32,6 @@
     <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.0" PrivateAssets="all" />
     <PackageVersion Include="Microsoft.Extensions.Http" Version="7.0.0" />
   </ItemGroup>
-
   <!-- OpenTelemetry -->
   <ItemGroup>
     <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.4.0-rc.3" />

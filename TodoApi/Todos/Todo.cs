@@ -1,34 +1,28 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.IdentityModel.Tokens;
+using System.ComponentModel.DataAnnotations;
 
 public class Todo
 {
-    public int Id { get; set; }
+    public string Id { get; set; }
     [Required]
     public string Title { get; set; } = default!;
-    public bool IsComplete { get; set; }
+    public bool? IsComplete { get; set; }
+    public bool? IsVisible { get; set; }
+    public int Position { get; set; }
 
-    [Required]
-    public string OwnerId { get; set; } = default!;
-}
+    public string ParentId { get; set; }
 
-// The DTO that excludes the OwnerId (we don't want that exposed to clients)
-public class TodoItem
-{
-    public int Id { get; set; }
-    [Required]
-    public string Title { get; set; } = default!;
-    public bool IsComplete { get; set; }
-}
 
-public static class TodoMappingExtensions
-{
-    public static TodoItem AsTodoItem(this Todo todo)
+    public static Todo FromGoogleTask(Google.Apis.Tasks.v1.Data.Task task)
     {
         return new()
         {
-            Id = todo.Id,
-            Title = todo.Title,
-            IsComplete = todo.IsComplete,
+            Id = task.Id,
+            Title = task.Title,
+            IsComplete = !task.Completed.IsNullOrEmpty(),
+            IsVisible = !task.Hidden,
+            Position = Int32.Parse(task.Position),
+            ParentId = task.Parent,
         };
     }
 }
